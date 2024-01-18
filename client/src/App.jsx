@@ -7,7 +7,10 @@ const baseUrl = 'https://bookish-space-guide-w4jx979jj9gf9qxg-9000.app.github.de
 const App = () => {
   const handleClick = async () => {
     try {
-      const { data } = await axios(`${baseUrl}`)
+      const { data } = await axios.post(`${baseUrl}server`, {
+        test: "Test message",
+        num: 200
+      })
       console.log(data);
     } catch (error) {
       console.log(error);
